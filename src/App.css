@@ -1,0 +1,407 @@
+html{
+  background: linear-gradient(to bottom, #00ccff 10%, #ffffff 90%);
+  height: 100%;
+  overflow: scroll;
+}
+
+.App {
+  text-align: center;
+  background: linear-gradient(to bottom, #00ccff 0%, #ffffff 100%);
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.login{
+  display: flex;
+  text-align: center;
+  border: 2.5px;
+  border-style: solid;
+  background-color: #ffffff;
+  border-radius: 20%;
+  width: 300px;
+  min-height: 160px;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  top: 200px;
+}
+
+.login input[type="submit"]{
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.login input[type="email"]{
+  float: right;
+}
+
+.login input[type="password"]{
+  float: right;
+}
+
+.inputDiv{
+  display: inline-block;
+  overflow:visible;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: 250px;
+  text-align: left;
+}
+
+.suggest{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin-top: auto;
+  position: relative;
+  top: 200px;
+}
+
+.navbar{
+  background-color:#262626;
+  padding: 0%;
+  width:103%;
+  height: auto;
+  min-height: 100px;
+  margin-left:-10px;
+  position: absolute;
+  top: 0%;
+}
+
+
+.navbar h1{
+  text-align: center;
+  margin-right: 30%;
+  margin-left: 30%;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  border: solid;
+  border-top: none;
+  border-left: 1px;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.navbar a.active {
+  background-color: #2196F3;
+  color: white;
+}
+
+.title{
+  text-align: center;
+  font-size: 60px;
+  color: white;
+}
+
+.indexTitle{
+  margin-top: 150px;
+}
+
+.headTitle{
+  color:white;
+  text-align: center;
+}
+
+.searchbarDiv{
+  display: block;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.searchbar{
+  display: block;
+  text-align: center;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.searchbar input[type="text"]{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 25px;
+  width: 500px;
+}
+
+.songWhole{
+  display: flex;
+  width :700px;
+  height: 400px;
+  margin-top: 170px;
+  overflow: hidden;
+  border-radius: 8%;
+  margin-right: auto;
+  margin-left: auto;
+  overflow:hidden;
+  top: auto;
+}
+
+.song{
+  margin-top: 200px;
+  margin-right: auto;
+  margin-left: auto;
+
+}
+
+.songHeadDetails{
+  width:350px;
+  height:380px;
+  display: flex;
+  word-wrap: break-word;
+  align-self: center;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: rgba(0, 0, 0, 0.493);
+}
+.songInfoDiv form{
+  margin-left: auto;
+  margin-right: auto;
+  top: 0%;
+  display: flex;
+}
+
+.songInfoDiv input[type="submit"]{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.songInfoDiv{
+  width: 80%;
+  height: 80%;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.songDetails{
+  color: white;
+  text-align: center;
+}
+
+.songArtist{
+  width: 130px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50%;
+  padding: 15px;
+}
+
+.songImgDiv{
+  width: 350px;
+  height:380px;
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0.493);
+  align-self: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.songImg{
+  width:250px;
+  height: 250px;
+  margin-top: 15px;
+
+  border-radius: 10%;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+.spotifyPlayer{
+  margin-right: auto;
+  margin-left: auto; 
+  width: 700px;
+  height: 80px;
+}
+.lyricsDiv{
+  margin-top: 10px;
+}
+.lyricsDiv a{
+  color: blue;
+}
+
+.center{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.navbar .login-container{
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+}
+
+.indexForm{
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 15px;
+}
+
+.navbar .login-container input[type="text"]{
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+  width:500px;
+}
+
+.navbar .login-container input[type="submit"]{
+  margin-top: 45px;
+}
+
+.playListDiv{
+  background: linear-gradient(to bottom, #00ccff 10%, #ffffff 90%);
+  height: 100%;
+  margin: 0%;
+  overflow: scroll;
+}
+
+.playlistTable{
+  border-style: solid;
+  border-color: black;
+  border-collapse: collapse;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 50px;
+}
+
+.playlistTable th td{
+  border-style: solid;
+  border-color: black;
+  padding: 5px;
+}
+
+.playlistTable td{
+  text-align: center;
+  border-right: solid;
+  padding: 5px;
+}
+
+.playlistTable tr{
+  border-bottom: solid;
+  text-align: center;
+}
+
+.submitDiv{
+  margin-right: auto;
+  margin-left: auto;
+  width: 150px
+}
+
+.tableTitle{
+  margin-left: 30px;
+}
+
+.submit{
+  margin-right: 30%;
+  margin-left: 30%;
+  margin-top: 5px;
+}
+
+.signUpLink{
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  margin-top: 215px;
+}
+
+.signUp{
+  display: flex;
+  text-align: center;
+  font-size: 19px;
+  border: 2.5px;
+  position: relative;
+  background-color: #ffffff;
+  border-color: black;
+  border-style: solid;
+  border-radius: 5%;
+  width: 280px;
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 200px;
+}
+
+.signUp input[type="email"]{
+  float: right;
+}
+
+.signUp input[type="text"]{
+  float: right;
+}
+
+.signUp input[type="password"]{
+  float:right;
+}
+
+.signUpInput{
+  display: inline-block;
+  overflow:visible;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: 250px;
+  text-align: left;
+}
+
+.loginLink{
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  position: relative;
+}
+
+.accErrMess{
+  text-align: center;
+}
