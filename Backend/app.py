@@ -99,18 +99,16 @@ def index():
         }
         return jsonify(songObj)
 
-@app.route("/loadPlaylist",methods=["POST"])
+
+@app.route("/loadPlaylist", methods=["POST"])
 def loadList():
     data = flask.request.get_json()
-    loadArtist =[]
+    loadArtist = []
     findArtists = favArtists.query.filter_by(accountEmail=data.get("email"))
     for objects in findArtists:
         loadArtist.append(objects.artistName)
-    playlist ={
-        "playlist":loadArtist
-    }
+    playlist = {"playlist": loadArtist}
     return jsonify(playlist)
-
 
 
 @app.route("/remove", methods=["POST"])
@@ -179,4 +177,4 @@ def save():
 
 
 if __name__ == "__main__":
-    app.run(debug=True,  port=int(os.environ.get("PORT", 5000)))
+    app.run(debug=True, port=int(os.environ.get("PORT", 5000)))

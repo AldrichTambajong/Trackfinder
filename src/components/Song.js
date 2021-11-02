@@ -34,14 +34,14 @@ function Song(props) {
                     <div className="songInfoDiv">
                         <h2 className="songDetails">{props.songName}</h2>
                         <h3 className="songDetails">by {props.artistName}</h3>
-                        <img src={props.artistImg} className="songArtist" alt=""/>
+                        <img src={props.artistImg} className="songArtist" alt="" />
                         <form method="POST" name="save" onSubmit={(e) => { addArtist(e) }}>
                             <input type="submit" value="Save Artist" />
                         </form>
                     </div>
                 </div>
                 <div className="songImgDiv">
-                    <img src={props.songImg} className="songImg" alt=""/>
+                    <img src={props.songImg} className="songImg" alt="" />
                     <h1 className="songDetails">{props.albumName}</h1>
                 </div>
             </div>

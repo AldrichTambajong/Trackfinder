@@ -1,6 +1,6 @@
 import './App.css';
 import { BrowserRouter as Router, Switch, Route, Link, Redirect } from 'react-router-dom'
-import { useState,useEffect} from 'react'
+import { useState, useEffect } from 'react'
 import Index from './components/Index'
 import Login from './components/Login';
 import Song from './components/Song'
@@ -13,19 +13,19 @@ function App() {
   // state variables will not lose any value given to them upon page reload.
   // Used sessionStorage and not localStorage so variables delete themselves
   // when user closes page
-  const [loggedIn,setLogin] = useState(sessionStorage.getItem("loggedIn"))
+  const [loggedIn, setLogin] = useState(sessionStorage.getItem("loggedIn"))
   const [email, setEmail] = useState(sessionStorage.getItem("email"))
   const [name, setName] = useState(sessionStorage.getItem("name"))
-  const [artistPresent,setArtistPresent] = useState(sessionStorage.getItem("artistPresent"))
+  const [artistPresent, setArtistPresent] = useState(sessionStorage.getItem("artistPresent"))
   const [artistName, setArtistName] = useState(sessionStorage.getItem("artistName"))
   const [artistImg, setArtistImg] = useState(sessionStorage.getItem("artistImg"))
-  const [songName,setSongName] = useState(sessionStorage.getItem("songName"))
-  const [songUrl,setSongUrl] = useState(sessionStorage.getItem("songUrl"))
-  const [songImg,setSongImg] = useState(sessionStorage.getItem("songImg"))
-  const [albumName,setAlbumName] = useState(sessionStorage.getItem("albumName"))
-  const [lyrics,setLyrics] = useState(sessionStorage.getItem("lyrics"))
-  const [savedArtist,setSavedArtist] = useState([])
-  const [signedUp,setSignedUp] = useState()
+  const [songName, setSongName] = useState(sessionStorage.getItem("songName"))
+  const [songUrl, setSongUrl] = useState(sessionStorage.getItem("songUrl"))
+  const [songImg, setSongImg] = useState(sessionStorage.getItem("songImg"))
+  const [albumName, setAlbumName] = useState(sessionStorage.getItem("albumName"))
+  const [lyrics, setLyrics] = useState(sessionStorage.getItem("lyrics"))
+  const [savedArtist, setSavedArtist] = useState([])
+  const [signedUp, setSignedUp] = useState()
 
   useEffect(() => {
     // Loads playlist in playlist.js in /songInfo route; can't pass the 
@@ -34,17 +34,17 @@ function App() {
     var user = {
       'email': email
     }
-    fetch('/loadPlaylist',{
-        method:'POST',
-        headers:{
-            'Content-Type':'application/json'
-        },
-        body:JSON.stringify(user)
+    fetch('/loadPlaylist', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(user)
     })
-    .then(response => response.json())
-    .then(data =>{
+      .then(response => response.json())
+      .then(data => {
         setSavedArtist(data.playlist)
-    })
+      })
   })
 
   return (
@@ -77,26 +77,26 @@ function App() {
           </Route>
           <Route exact path="/index">
             {/* Renders main searchbar page until user enters an artist to search */}
-          {artistPresent === "true" ?
+            {artistPresent === "true" ?
               <Redirect to="/songInfo"></Redirect>
               :
               <Index name={name} email={email} setArtistName={setArtistName} setArtistImg={setArtistImg} setSongName={setSongName}
-              setSongUrl={setSongUrl} setSongImg={setSongImg} setAlbumName={setAlbumName} setLyrics={setLyrics}
-              setArtistPresent={setArtistPresent} savedArtist={savedArtist} setSavedArtist={setSavedArtist}></Index>
+                setSongUrl={setSongUrl} setSongImg={setSongImg} setAlbumName={setAlbumName} setLyrics={setLyrics}
+                setArtistPresent={setArtistPresent} savedArtist={savedArtist} setSavedArtist={setSavedArtist}></Index>
             }
           </Route>
           <Route exact path="/songInfo" >
-              <TrackfinderNav email={email} setArtistName={setArtistName} setArtistImg={setArtistImg} setSongName={setSongName}
+            <TrackfinderNav email={email} setArtistName={setArtistName} setArtistImg={setArtistImg} setSongName={setSongName}
               setSongUrl={setSongUrl} setSongImg={setSongImg} setAlbumName={setAlbumName} setLyrics={setLyrics}
-              setArtistPresent={setArtistPresent} savedArtist={savedArtist} setSavedArtist={setSavedArtist}/>
+              setArtistPresent={setArtistPresent} savedArtist={savedArtist} setSavedArtist={setSavedArtist} />
 
-              <Song email={email} artistName={artistName} artistImg={artistImg} songName={songName} 
+            <Song email={email} artistName={artistName} artistImg={artistImg} songName={songName}
               songUrl={songUrl} songImg={songImg} albumName={albumName} lyrics={lyrics} setSavedArtist={setSavedArtist}></Song>
 
-              <Playlist email={email} savedArtist={savedArtist} setSavedArtist={setSavedArtist}></Playlist>
+            <Playlist email={email} savedArtist={savedArtist} setSavedArtist={setSavedArtist}></Playlist>
           </Route>
           <Route exact path="/signUp">
-            {signedUp === true?
+            {signedUp === true ?
               <Redirect to="/login"></Redirect>
               :
               <div>
